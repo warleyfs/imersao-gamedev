@@ -1,6 +1,8 @@
 class Personagem extends Animacao {
-  constructor(matriz, imagem, x, variacaoY, largura, altura, larguraSprite, alturaSprite) {
-    super(matriz, imagem, x, variacaoY, largura, altura, larguraSprite, alturaSprite);
+  constructor(matriz, imagemNormal, imagemDano, x, variacaoY, largura, altura, larguraSprite, alturaSprite) {
+    super(matriz, imagemNormal, x, variacaoY, largura, altura, larguraSprite, alturaSprite);
+    this.imagemNormal = imagemNormal;
+    this.imagemDano = imagemDano;
     this.variacaoY = variacaoY;
     this.yInicial = height - altura - this.variacaoY;
     this.y = this.yInicial;
@@ -18,7 +20,6 @@ class Personagem extends Animacao {
     if (this.qtdPulos <= this.maxPulos) {
       this.velocidadeDoPulo = this.pulo;
     }
-
   }
 
   exibe() {
@@ -59,6 +60,13 @@ class Personagem extends Animacao {
       inimigo.y,
       inimigo.largura * precisao,
       inimigo.altura * precisao);
+
+    if (colisao && !this.invencivel) {
+      super.imagem = this.imagemDano;
+      setTimeout(() => {
+        super.imagem = this.imagemNormal;
+      }, 500);
+    }
 
     return colisao;
   }

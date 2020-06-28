@@ -1,8 +1,14 @@
 let imagemCenario, imagemBruxinha, imagemGotinha, imagemGotinhaVoadora, imagemTroll;
+let imagemJovemNerd, imagemJovemNerdDano, imagemAzaghal, imagemAzaghalDano, imagemBeholderMergulho, imagemBeholderAndando;
+let imagemArtimus, imagemAvatarJovemNerd, imagemAvatarAzaghal;
+let imagemPantanoChao, imagemPantanoCeu, imagemPantanoAgua, imagemPantanoArvores1;
+let imagemPantanoArvores2, imagemPantanoArvores3, imagemPantanoArvores4; 
 let imagemTelaInicial, imagemGameOver, imagemVida;
 let fonteTelaInicial;
 let botaoInicio;
-let cenario, bruxinha, trilha, somPulo, placar, pontuador, vidas;
+let ceu, arvores4, arvores3, arvores2, arvores1, agua, chao;
+let bruxinha, jovemNerd, azaghal, artimus, trilha, somPulo, placar, pontuador, vidas;
+let personagemAtual, botaoJovemNerd, botaoAzaghal;
 let jogo, telaInicial;
 let cenaAtual = 'telaInicial';
 let cenas = [];
@@ -87,6 +93,28 @@ const matrizTroll = [
   [0, 2000],
   [400, 2000],
   [800, 2000],
+];
+const matrizJovemNerd = [
+  [0,0], [74,0], [148,0], [222,0], [296,0], [370,0]
+];
+const matrizAzaghal = [
+  [0,0], [90,0], [180,0], [270,0], [360,0], [450,0]
+];
+const matrizBeholderAndando = [
+  [0, 0], 
+  [134, 0], 
+  [268, 0], 
+  [402, 0], 
+  [536, 0], 
+  [0, 137], 
+  [134, 137], 
+  [268, 137], 
+  [402, 137], 
+  [536, 137]
+];
+const matrizArtimus = [
+  [0,0], [256,0], [512,0], [768,0], 
+  [0,235], [256,235], [512,235], [768,235], 
 ];
 
 function criarMatrizBruxinha(qtdLinhas, qtdColunas, altura, largura) {

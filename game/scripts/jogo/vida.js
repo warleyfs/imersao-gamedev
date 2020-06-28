@@ -2,8 +2,8 @@ class Vida {
     constructor (qtdVidas) {
         this.qtdVidas = qtdVidas;
         this._vidasRestantes = this.qtdVidas;
-        this.largura = 50;
-        this.altura = 50;
+        this.largura = 25;
+        this.altura = 25;
         this.margem = 10;
         this.y = 10;
     }

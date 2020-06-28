@@ -8,7 +8,8 @@ class TelaInicial {
                                     (botao) => {
                                         botao.remove();
                                         cenaAtual = 'jogo';
-                                    });
+                                    }, 
+                                    true);
     }
 
     _imagemDeFundo() {
@@ -20,9 +21,9 @@ class TelaInicial {
         textAlign(CENTER);
         
         textSize(50);
-        text('As aventuras de', width / 2, height / 3);
+        text('O Duque, a Rosa e o', width / 2, height / 3);
         textSize(150);
-        text('Hipsta', width / 2, height / 5 * 3);
+        text('Beholder', width / 2, height / 5 * 3);
     }
 
     draw() {
